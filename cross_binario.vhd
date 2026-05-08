@@ -12,7 +12,7 @@ port		( prng_i : in  std_logic_vector(Nprng - 1 downto 0); -- Entrada del PRNG
 				 hijo : out std_logic_vector(Npadre - 1 downto 0));
 end entity;
 
-architecture uno of cross_binario is
+architecture rtl of cross_binario is
 
 	signal prng_int : unsigned(Nprng - 1 downto 0);
 
@@ -25,4 +25,4 @@ begin
         hijo(i) <= p1(i) when i < to_integer(prng_int) else p2(i);
     end generate;
 	
-end uno;
+end rtl;
